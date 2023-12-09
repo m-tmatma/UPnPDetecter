@@ -20,9 +20,17 @@ namespace UPnPDetecter
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Terminal> _terminals = new List<Terminal>();
+
         public MainWindow()
         {
             InitializeComponent();
+
+            _terminals.Add(new Terminal(1, "PC1", "192.168.0.1", "xx:xx:xx:xx:xx:00"));
+            _terminals.Add(new Terminal(2, "PC2", "192.168.0.2", "xx:xx:xx:xx:xx:01"));
+            _terminals.Add(new Terminal(3, "PC3", "192.168.0.3", "xx:xx:xx:xx:xx:02"));
+
+            TerminalsListView.ItemsSource = _terminals;
         }
     }
 }
